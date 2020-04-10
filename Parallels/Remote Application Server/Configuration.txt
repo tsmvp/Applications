@@ -18,6 +18,7 @@ Set-RDSDefaultSettings -MaxSessions 100 -EnableAppMonitoring $true
 New-PubRDSDesktop -Name "Desktop"
 Set-RASTurboSettings -Enable $False
 Set-2FA -Provider GAuthTOTP
+Set-RASAuthSettings -AuthType UsernamePassword -ForceNetBIOSCreds $false
 Invoke-LicenseActivate -email $Email -Password $EmailPassword
 Invoke-Apply
 
